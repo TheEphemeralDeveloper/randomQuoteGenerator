@@ -1,0 +1,27 @@
+$calm: #333333;
+$custom: #EFEFEF;
+
+$success: #AEC6CF;
+$light: #FDFD96;
+$dark: #77DD77;
+$primary: #FFB7C5;
+$secondary: #CBAACB;
+$warning: #FFDAC1;
+$danger: #CFFFE5;
+$info: #FFD1DC;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "calm":       $calm,
+  "custom":     $custom
+);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap"
