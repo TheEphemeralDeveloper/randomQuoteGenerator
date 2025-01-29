@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import quotesData from './quotesData.js';
 
-console.log('quotesData', quotesData)
-
 const quoteSlice = createSlice({
     name: 'quotes',
     initialState: {
