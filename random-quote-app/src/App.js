@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect }from 'react';
+import React, { useEffect, useLayoutEffect }from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setRandomQuote, setRandomColor } from './features/quoteSlice';
 import './custom.scss'
@@ -25,17 +25,20 @@ function App() {
   const nextColor = useSelector((state) => state.quotes.nextColor);
   const dispatch = useDispatch();
 
-  console.log(currentColor,nextColor)
+  console.log(currentQuote)
+
+  useLayoutEffect(() => {
+    document.body.classList = `bg-${currentColor}-body`
+  }, [currentColor])
 
   useEffect(() => {
-    document.body.classList = `bg-${currentColor}-body`
     WebFont.load({
       google: {
-        families: ["Noto Serif Hentaigana"]
+        families: ["Noto Serif Hentaigana:400, 700"]
       }
-    })
+    });
     dispatch(setRandomQuote());
-  }, dispatch)
+  }, [dispatch])
 
   const handleNewQuote = () => {
     dispatch(setRandomQuote());
@@ -43,7 +46,6 @@ function App() {
     document.body.classList = `bg-${nextColor}-body`
   }
 
-  console.log('Current Quote:', currentQuote);
   return (
     <div className="container-fluid my-5 py-5  justify-content-center align-items-center align-self-center" >
       <div className={`container d-flex align-text-center bg-${currentColor} shadow rounded border-5`} style={{ height: "7%", width: "45%"}} ><h1 className='h1 row mx-auto noto-serif-hentaigana-bold'>Inspirational Quotes</h1></div>
@@ -60,10 +62,10 @@ function App() {
           </>
         ) : ( <p>Loading new Quote...</p>)}
         <div className='row'>
-        <button className={`btn btn-outline-${currentColor}-compliment border border-0 col-1 offset-1`}>
+        <button className={`btn btn-outline-custom  border border-calm border-1 col-1 offset-1`}>
           <XLogo />
         </button>
-        <button className={`btn btn-outline-${currentColor}-compliment text-calm border border-0 col-2 offset-7`} id='new-quote' onClick={handleNewQuote}>New Quote</button>
+        <button className={`btn btn-outline-${currentColor}-compliment text-calm border border-1 border-calm col-1 offset-8`} id='new-quote' onClick={handleNewQuote}>New Quote</button>
         </div>
       </div>
     </div>

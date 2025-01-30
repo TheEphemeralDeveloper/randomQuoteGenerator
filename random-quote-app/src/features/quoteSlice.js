@@ -6,6 +6,7 @@ const quoteSlice = createSlice({
     initialState: {
         quotes: quotesData,
         currentQuote: null,
+        nextQuote: null,
         color: {
             0: 'success',
             1: 'primary',
@@ -17,19 +18,33 @@ const quoteSlice = createSlice({
             7: 'dark'
         },
         currentColor: 'success',
-        nextColor: 'success'
+        nextColor: null
     },
     reducers: {
         setRandomQuote: (state) => {
             const keys = Object.keys(state.quotes);
             const randomKey = keys[Math.floor(Math.random() * keys.length)];
-            state.currentQuote = state.quotes[randomKey];
+
+            state.nextQuote = state.quotes[randomKey];
+            
+            if (state.nextQuote === state.currentQuote) {
+                while (state.nextQuote === state.currentQuote) {
+                    state.nextQuote = state.quotes[randomKey];
+                }
+            }
+
+            state.currentQuote = state.nextQuote;
         },
         setRandomColor: (state) => {
             const keys = Object.keys(state.color);
             const randomKey = keys[Math.floor(Math.random() * keys.length)];
-            state.currentColor = state.nextColor;
             state.nextColor = state.color[randomKey];
+
+            if (state.nextColor === state.currentColor){
+                state.nextColor = state.color[randomKey];
+            }
+            
+            state.currentColor = state.nextColor;
         }
     }
 });
