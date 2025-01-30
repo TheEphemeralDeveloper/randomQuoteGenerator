@@ -16,12 +16,10 @@ code {
   .custom-container, .custom-h-container {
     width: 100%;
   }
-
-  .custom-container {
-    height: 30vh;
-  }
   
   .custom-h-container {
     height: 20 vh;
   }
 }
+
+

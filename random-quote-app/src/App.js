@@ -45,13 +45,13 @@ function App() {
   }
 
   return (
-    <div className="container-fluid my-5 py-5  justify-content-center align-items-center align-self-center" >
-      <div className={`container d-flex align-text-center bg-${currentColor} shadow rounded border-5 custom-h-container`}  ><h1 className='h1 row mx-auto noto-serif-hentaigana-bold'>Inspirational Quotes</h1></div>
+    <div className="container-fluid my-5 py-5 justify-content-center align-items-center" >
+      <div className={`container-fluid-lg  d-flex text-align-center bg-${currentColor} shadow rounded border-5 custom-h-container`}  ><h1 className='h1 row mx-auto noto-serif-hentaigana-bold'>Inspirational Quotes</h1></div>
       <hr style={{ border: "none" }}/>
-        <div className={`container text-center align-self-top shadow rounded bg-${currentColor} bg-gradient pb-3 custom-container`} id='quote-box'>
+        <div className={`container-fluid-lg text-center align-self-top shadow rounded bg-${currentColor} bg-gradient pb-3 custom-container`} id='quote-box'>
         { currentQuote ? (
           <>
-          <div className='row pt-2' style={{ height: 110 }}>
+          <div className='row pt-2'>
             <h3 className="h3 text-calm text-center noto-serif-hentaigana-bold" id='text'><Quote />{currentQuote.quote}</h3>
           </div>
           <div className='row h-10'>
@@ -59,11 +59,11 @@ function App() {
           </div>
           </>
         ) : ( <p>Loading new Quote...</p>)}
-        <div className='btn-group d-flex d-md-inline-flex'>
-        <button className={`btn btn-outline-custom d-inline border border-calm border-1 w-50 w-md-auto`}>
+        <div className='container d-grid d-md-flex'>
+        <button className={`btn btn-outline-custom border border-calm border-1 w-100 w-md-auto `}>
           <XLogo />
         </button>
-        <button className={`btn btn-outline-${currentColor}-compliment text-calm border border-1 border-calm d-inline w-50 w-md-auto`} id='new-quote' onClick={handleNewQuote}>New Quote</button>
+        <button className={`btn btn-outline-${currentColor}-compliment text-calm border border-1 border-calm w-100 w-md-auto `} id='new-quote' onClick={handleNewQuote}>New Quote</button>
         </div>
       </div>
     </div>
