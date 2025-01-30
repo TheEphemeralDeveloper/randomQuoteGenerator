@@ -1,6 +1,7 @@
 {
   "name": "random-quote-app",
   "version": "0.1.0",
+  "homepage": "https://theephemeraldeveloper.github.io/randomquotegenerator",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
@@ -8,6 +9,7 @@
     "@reduxjs/toolkit": "^2.5.1",
     "bootstrap": "^5.3.3",
     "cra-template": "1.2.0",
+    "git": "^0.1.5",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.8",
     "react-dom": "^19.0.0",
@@ -19,6 +21,8 @@
     "webfontloader": "^1.6.28"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -41,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
