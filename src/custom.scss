@@ -1,0 +1,62 @@
+$calm: #333333;
+$custom: #EFEFEF;
+
+$success: #AEC6CF;
+$light: #FDFD96;
+$dark: #77DD77;
+$primary: #FFB7C5;
+$secondary: #CBAACB;
+$warning: #FFDAC1;
+$danger: #CFFFE5;
+$info: #FFD1DC;
+
+$success-compliment: #CF7F6E;
+$light-compliment: #9696FD;
+$dark-compliment: #DD7790;
+$primary-compliment: #B7FFEA;
+$secondary-compliment: #AACB77;
+$warning-compliment: #C181FF;
+$danger-compliment: #FF9F40;
+$info-compliment: #1DFFA3; 
+
+$success-body: #E9F2F4;   // Soft, muted version of $success
+$light-body: #FFFDE1;     // Very light pastel yellow
+$dark-body: #E8F7E8;      // Muted light green
+$primary-body: #FFE6EB;   // Soft pink
+$secondary-body: #F5EAF5; // Light lavender
+$warning-body: #FFF4EB;   // Very light peach
+$danger-body: #F0FFF9;    // Subtle mint green
+$info-body: #FFEEF2;
+
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "calm":       $calm,
+  "custom":     $custom,
+  "success-compliment": $success-compliment,
+  "light-compliment": $light-compliment,
+  "dark-compliment": $dark-compliment,
+  "primary-compliment": $primary-compliment,
+  "secondary-compliment": $secondary-compliment,
+  "warning-compliment": $warning-compliment,
+  "danger-compliment": $danger-compliment,
+  "info-compliment": $info-compliment,
+  "success-body": $success-body,
+  "light-body": $light-body,
+  "dark-body": $dark-body,
+  "primary-body": $primary-body,
+  "secondary-body": $secondary-body,
+  "warning-body": $warning-body,
+  "danger-body": $danger-body,
+  "info-body": $info-body
+);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap"
