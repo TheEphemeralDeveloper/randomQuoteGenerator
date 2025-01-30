@@ -1,7 +1,7 @@
 {
   "name": "random-quote-app",
   "version": "0.1.0",
-  "homepage": "https://theephemeraldeveloper.github.io/randomquotegenerator",
+  "homepage": "https://theEphemeralDeveloper.github.io/randomQuoteGenerator",
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
