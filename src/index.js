@@ -5,6 +5,13 @@ import store from './store/store';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WebFont from 'webfontloader';
+
+WebFont.load({
+      google: {
+        families: ["Noto Serif Hentaigana:400, 700"]
+      }
+    });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

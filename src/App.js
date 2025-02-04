@@ -1,9 +1,8 @@
 import './App.css';
-import React, { useEffect, useLayoutEffect }from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setRandomQuote, setRandomColor } from './features/quoteSlice';
 import './custom.scss'
-import WebFont from 'webfontloader'
 
 function Quote() {
   return (
@@ -30,11 +29,6 @@ function App() {
   }, [currentColor])
 
   useEffect(() => {
-    WebFont.load({
-      google: {
-        families: ["Noto Serif Hentaigana:400, 700"]
-      }
-    });
     dispatch(setRandomQuote());
   }, [dispatch])
 
@@ -43,6 +37,12 @@ function App() {
     dispatch(setRandomColor());
     document.body.classList = `bg-${nextColor}-body`
   }
+
+  const getTwitterUrl = () => {
+    const encoded = encodeURIComponent(currentQuote);
+    return `https://twitter.com/intent/tweet?text=${encoded}`
+  }
+
 
   return (
     <div className="container-fluid my-5 py-5 justify-content-center align-items-center" >
@@ -59,11 +59,11 @@ function App() {
           </div>
           </>
         ) : ( <p>Loading new Quote...</p>)}
-        <div className='container d-grid d-md-flex'>
-        <button className={`btn btn-outline-custom border border-calm border-1 w-100 w-md-auto `}>
+        <div className='container d-grid d-md-flex gap-md-4 gap-1'>
+        <a className={`btn btn-outline-custom border border-calm border-1 w-100 w-md-25`} href={getTwitterUrl()} id='tweet-quote' target='_blank'>
           <XLogo />
-        </button>
-        <button className={`btn btn-outline-${currentColor}-compliment text-calm border border-1 border-calm w-100 w-md-auto `} id='new-quote' onClick={handleNewQuote}>New Quote</button>
+        </a>
+        <button className={`btn btn-outline-${currentColor}-compliment text-calm border border-1 border-calm w-100 w-md-10`} id='new-quote' onClick={handleNewQuote}>New Quote</button>
         </div>
       </div>
     </div>
